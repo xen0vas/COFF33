@@ -6,12 +6,9 @@
 #include <strsafe.h>
 #include <shlwapi.h>
 
-#define CopyMem   __movsb
-
-#define MEM_SYMNAME_MAX		100
-
+#define CopyMem  __movsb
+#define MEM_SYMNAME_MAX	100
 #pragma comment(lib, "Shlwapi.lib")
-
 #define IMAGE_REL_AMD64_ADDR32NB    0x0003
 #define IMAGE_REL_AMD64_REL32       0x0004
 
@@ -27,7 +24,7 @@ typedef struct _COFF_FILE_HEADER {
 
 
 #pragma pack(push,1)
-/* Size of 40 */
+
 typedef struct _COFF_SECTION {
     char Name[8];
     uint32_t VirtualSize;
@@ -41,8 +38,6 @@ typedef struct _COFF_SECTION {
     uint32_t Characteristics;
 } COFF_SECTION;
 
-
-/* size of 10 */
 typedef struct _COFF_RELOCATION {
     uint32_t VirtualAddress;
     uint32_t SymbolTableIndex;
@@ -50,7 +45,6 @@ typedef struct _COFF_RELOCATION {
 } COFF_RELOCATION;
 
 
-/* size of 18 */
 typedef struct _COFF_SYMBOL {
     union {
         char ShortName[8];
@@ -92,12 +86,12 @@ typedef struct _COFF_SYM_ADDR {
 #pragma pack(pop)
 
 COFF_MEM_SECTION * 	memSections 		= NULL;
-COFF_SYM_ADDR * 	memSymbols 		    = NULL;
-int 				memSections_size 	= 0;
-int 				memSymbols_size 	= 0;
-char * 				iGOT				= NULL;
-int 				iGOT_index			= 0;
-void 				(* hitTheGoFunction)(void);
+COFF_SYM_ADDR * 	memSymbols 	        = NULL;
+int 			memSections_size 	= 0;
+int 			memSymbols_size 	= 0;
+char * 			iGOT			= NULL;
+int 			iGOT_index		= 0;
+void 			(* hitTheGoFunction)(void);
 
 int InMemoryResolveSymbols(void) {
 	char * symbol= NULL;
