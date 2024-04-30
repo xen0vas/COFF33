@@ -15,4 +15,4 @@ open a powershell session and run the following
 ```
 .\COFFee.exe bypassamsi.o
 ```
-At this point AMSI is bypassed and Powerview can run undetected. 
+At this point AMSI is bypassed and flagged tools by AV engines can run undetected. 
