@@ -1,2 +1,2 @@
 # AmsiBypass
-COFF - Amsi Bypass
+COFF Loader - Amsi Bypass
