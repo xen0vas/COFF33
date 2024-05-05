@@ -17,7 +17,7 @@ open a powershell session and run the following
 .\COFFee.exe bypassamsi.o
 ```
 
-At this point AMSI is bypassed and tools such as Powerview that are flagged by AV engines can now run undetected. 
+At this point AMSI is bypassed and suites and tools such as PowerSploit that are flagged by AV engines can now run undetected. 
 
 
 
