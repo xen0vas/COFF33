@@ -14,7 +14,7 @@ compile the COFF Loader and the object file as follows
 open a powershell session and run the following 
 
 ```
-.\coffee.exe bamsi.o
+.\coffee.exe .\bamsi.o
 ```
 
 At this point AMSI is bypassed and suites and tools such as PowerSploit that are flagged by AV engines can now run undetected. 
