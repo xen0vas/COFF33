@@ -1,7 +1,7 @@
 # COF33 
 
 
-COFF33 is a quick and dirty COFF loader. It can be used to run COFF objects. In order to showcase the COFF Loader, the `bypassamsi.c` file is also provided that implements a malicious technique to bypass AMSI through byte patching. If insterested of how this actually works visit my blog where I have described the COFF mechanism in detail. 
+COFF33 is a quick and dirty COFF loader. It can be used to run COFF objects. In order to showcase the COFF Loader, the `bamsi.c` file is also provided that implements a malicious technique to bypass AMSI through byte patching. If insterested of how this actually works visit my blog where I have described the COFF mechanism in detail. 
 
 ## Compile and run 
 
