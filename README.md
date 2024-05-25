@@ -23,7 +23,7 @@ Then run
 .\coffee.exe .\bamsi.o
 ```
 
-At this point AMSI is bypassed and suites and tools such as PowerSploit that are flagged by AV engines can now run undetected. 
+
 
 
 
